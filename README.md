@@ -32,6 +32,11 @@ $result = DotArr::dotGet($arr, 'foo.bar');
 
 var_dump($result); // result is hello
 
+$result = DotArr::dotGet($arr, 'foo');
+
+var_dump($result); // result is ['bar' => 'hello']
+
+
 // 获取值不存在返回默认值
 $result = DotArr::dotGet($arr, 'a.b', 'd');
 
