@@ -21,6 +21,20 @@ class DotArrTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expect, $arr);
     }
 
+    public function testSetOperator()
+    {
+        $arr = [];
+        $expect = [
+            'a' => [
+                'b' => 'c'
+            ]
+        ];
+        DotArr::setOperator('/');
+        DotArr::dotSet($arr, 'a/b', 'c');
+
+        $this->assertEquals($expect, $arr);
+    }
+
     public function testGet()
     {
         $arr = [];
