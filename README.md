@@ -55,6 +55,17 @@ $result = DotArr::dotHas($arr, 'a.b');
 var_dump($result); // result is false
 ```
 
+自定义分隔符：
+```php
+use Kit\DotArr;
+
+DotArr::setOperator('/');
+$arr = [];
+DotArr::dotSet($arr, 'foo/bar', 'hello');
+$result = DotArr::dotGet($arr, 'foo/bar');
+var_dump($result); // result is hello
+```
+
 ### Pipeline
 
 管道模式，将载荷送入管道，流过每一节管道，返回结果。
